@@ -79,6 +79,7 @@ plan-destroy: prep ## Creates a destruction plan.
 		-refresh=true \
 		-destroy \
 		-var-file="$(VARS)"
+		
 
 apply: prep ## terraform apply
 	@terraform apply \
