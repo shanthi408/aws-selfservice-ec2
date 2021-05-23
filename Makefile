@@ -87,7 +87,6 @@ apply: prep ## terraform apply
 		-input=false \
 		-refresh=true \
 		-var-file="$(VARS)"
-		-var region="$(REGION)"
 
 destroy: prep ## Destroy the resources
 	@terraform destroy \
