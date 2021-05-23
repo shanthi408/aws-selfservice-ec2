@@ -12,13 +12,13 @@ terraform {
 }
 
 provider "aws" {
-  region = "${var.region}"
+  region = "${TF_VAR_region}"
 }
 
 
 module "ec2" {
   source                      = "./modules/ec2"
-  region                      = "${var.region}"
+  region                      = "${TF_VAR_region}"
   #ec2_host_key_pair           = var.ec2_host_key_pair
   ec2_ami                     = var.ec2_ami
   kms_key_id                  = var.kms_key_id
