@@ -6,6 +6,7 @@ variable "tags" {
 
 
 variable "region" {
+  type     = string
 }
 
 
