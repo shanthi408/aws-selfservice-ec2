@@ -1,4 +1,4 @@
-region                      = "$region"
+region                      = "${params.region}"
 instance_type               = "t3.xlarge" ##env.instance_type
 ec2_security_groups         = ["sg-dea4b0da"]
 iam_instance_profile        = "SSMInstanceProfile"
