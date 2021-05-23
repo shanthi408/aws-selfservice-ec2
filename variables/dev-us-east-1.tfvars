@@ -2,7 +2,6 @@ region                      = "${params.region}"
 instance_type               = "${params.instance-type}"
 ec2_security_groups         = ["sg-dea4b0da"]
 iam_instance_profile        = "SSMInstanceProfile"
-#ec2_host_key_pair           = "amazon-"
 ec2_ami                     = "ami-0d5eff06f840b45e9"
 kms_key_id                  = ""
 ec2_lt_name_tag             = "env-dev-lt"
