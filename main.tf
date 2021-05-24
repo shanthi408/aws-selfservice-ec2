@@ -24,8 +24,8 @@ module "ec2" {
   kms_key_id                  = var.kms_key_id
   auto_scaling_group_subnets  = var.auto_scaling_group_subnets
   instancetype               = var.instancetype
-  iam_instance_profile        = var.iam_instance_profile
-  ec2_security_groups         = var.ec2_security_groups
+  iaminstanceprofile        = var.iaminstanceprofile
+  ec2securitygroups         = var.ec2securitygroups
   tags                        = var.tags
   ec2_lt_name_tag             = var.ec2_lt_name_tag
   asg_resource_name           = var.asg_resource_name

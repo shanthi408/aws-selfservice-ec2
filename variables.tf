@@ -86,12 +86,12 @@ variable "instancetype" {
   default     = "t3.nano"
 }
 
-variable "iam_instance_profile" {
+variable "iaminstanceprofile" {
   description = "Instance size of the ec2"
   type        = string
 }
 
-variable "ec2_security_groups" {
+variable "ec2securitygroups" {
   description = "List of Security groups attached to EC2."
   type        = list(string)
 }

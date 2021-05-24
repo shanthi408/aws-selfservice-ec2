@@ -26,11 +26,11 @@ resource "aws_launch_template" "ec2_launch_template" {
 
   network_interfaces {
     associate_public_ip_address = var.associate_public_ip_address
-    security_groups             = var.ec2_security_groups
+    security_groups             = var.ec2securitygroups
     delete_on_termination       = true
   }
   iam_instance_profile {
-    name = var.iam_instance_profile
+    name = var.iaminstanceprofile
   }
   #key_name = var.ec2_host_key_pair
 
