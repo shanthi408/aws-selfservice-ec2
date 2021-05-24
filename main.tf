@@ -23,7 +23,7 @@ module "ec2" {
   ec2_ami                     = var.ec2_ami
   kms_key_id                  = var.kms_key_id
   auto_scaling_group_subnets  = var.auto_scaling_group_subnets
-  instance_type               = var.instance_type
+  instance_type               = var.instancetype
   iam_instance_profile        = var.iam_instance_profile
   ec2_security_groups         = var.ec2_security_groups
   tags                        = var.tags

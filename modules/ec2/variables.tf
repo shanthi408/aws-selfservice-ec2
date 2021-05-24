@@ -80,7 +80,7 @@ variable "ebs_volume_size" {
   type = string
 }
 
-variable "instance_type" {
+variable "instancetype" {
   description = "Instance size of the ec2"
   default     = "t3.nano"
 }

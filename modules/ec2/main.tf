@@ -7,7 +7,7 @@ resource "aws_launch_template" "ec2_launch_template" {
   name = var.lt_resource_name
   #image_id      = var.ec2_ami != "" ? var.ec2_ami : data.aws_ssm_parameter.ami.value
   image_id      = var.ec2_ami
-  instance_type = var.instance_type
+  instance_type = var.instancetype
   monitoring {
     enabled = true
   }

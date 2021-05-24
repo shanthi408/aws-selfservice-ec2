@@ -80,7 +80,7 @@ variable "allow_ssh_commands" {
   default     = "True"
 }
 
-variable "instance_type" {
+variable "instancetype" {
   description = "Instance size of the ec2"
   type        = string
   default     = "t3.nano"

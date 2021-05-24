@@ -1,5 +1,5 @@
-region                      = "us-east-1" # env.region
-instance_type               = "t3.xlarge" #env.instance_type
+region                      = "us-east-1"
+instance_type               = "t3.xlarge" 
 ec2_security_groups         = ["sg-0ea1797a"]
 iam_instance_profile        = "SSMInstanceProfile"
 ec2_host_key_pair           = "amazon-linux2-ami"
