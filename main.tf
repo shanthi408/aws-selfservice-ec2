@@ -19,7 +19,7 @@ provider "aws" {
 module "ec2" {
   source                      = "./modules/ec2"
   region                      = var.region
-  #ec2_host_key_pair           = var.ec2_host_key_pair
+  #ec2_host_key_pair          = var.ec2_host_key_pair
   ec2_ami                     = var.ec2_ami
   kms_key_id                  = var.kms_key_id
   auto_scaling_group_subnets  = var.auto_scaling_group_subnets
