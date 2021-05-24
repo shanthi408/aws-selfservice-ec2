@@ -1,4 +1,4 @@
-region                      = TF_VAR_region
+region                      = "TF_VAR_region"
 instance_type               = "t2.micro"
 ec2_security_groups         = ["sg-dea4b0da"]
 iam_instance_profile        = "SSMInstanceProfile"
