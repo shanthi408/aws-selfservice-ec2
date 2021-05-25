@@ -87,7 +87,7 @@ apply: prep ## terraform apply
 		-input=false \
 		-refresh=true \
 		-auto-approve=true \
-		-var="ec2securitygroups=["sg-dea4b0da"]" \
+		-var=ec2securitygroups=["sg-dea4b0da"] \
 		-var-file="$(VARS)"
 
 destroy: prep ## Destroy the resources
@@ -96,6 +96,6 @@ destroy: prep ## Destroy the resources
 		-input=false \
 		-refresh=true \
 		-auto-approve=true \
-		-var="ec2securitygroups=["sg-dea4b0da"]" \
+		-var=ec2securitygroups=["sg-dea4b0da"]
 		-var-file="$(VARS)"
 
