@@ -1,6 +1,6 @@
 #region                      = "TF_VAR_region"
 #instance_type               = "t2.micro"
-ec2securitygroups         = ["sg-dea4b0da"]
+#ec2securitygroups         = ["sg-dea4b0da"]
 #iam_instance_profile        = "SSMInstanceProfile"
 #ec2_ami                     = "ami-0d5eff06f840b45e9"
 kms_key_id                 = ""
