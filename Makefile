@@ -87,6 +87,7 @@ apply: prep ## terraform apply
 		-input=false \
 		-refresh=true \
 		-auto-approve=true \
+		-var='image_id_list=["sg-dea4b0da"]' \
 		-var-file="$(VARS)"
 
 destroy: prep ## Destroy the resources
@@ -95,5 +96,6 @@ destroy: prep ## Destroy the resources
 		-input=false \
 		-refresh=true \
 		-auto-approve=true \
+		-var='image_id_list=["sg-dea4b0da"]' \
 		-var-file="$(VARS)"
 
