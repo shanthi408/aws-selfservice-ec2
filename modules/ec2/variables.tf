@@ -12,7 +12,7 @@ variable "region" {
 #  description = "Select the key pair to use to launch the ec2 host"
 #}
 
-variable "ec2_lt_name_tag" {
+variable "ec2ltnametag" {
   description = "ec2 Launch template Name, will also be used for the ASG"
   default     = "gobi.kafka-copy.sandbox-lt"
 }
@@ -24,17 +24,17 @@ variable "ec2ami" {
 }
 
 
-variable "kms_key_id" {
+variable "kmskeyid" {
   type        = string
   description = "KMS key to encrypt ebs volume"
 }
 
-variable "asg_resource_name" {
+variable "asgresourcename" {
   type        = string
   description = "ASG resource name"
 }
 
-variable "lt_resource_name" {
+variable "ltresourcename" {
   type        = string
   description = "LT resource name"
 }

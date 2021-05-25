@@ -4,9 +4,9 @@ terraform {
   backend "s3" {
     encrypt = true
     acl     = "private"
-    bucket  = "abc-343-dev-us-east-1-167-terraform"
-    key     = "dev1.tfstate"
-    dynamodb_table = "abc-343-dev-us-east-1-167-terraform"
+    #bucket  = "abc-343-dev-us-east-1-167-terraform"
+    key     = var.appname".tfstate"
+    #dynamodb_table = "abc-343-dev-us-east-1-167-terraform"
 
   }
 }
@@ -21,15 +21,15 @@ module "ec2" {
   region                      = var.region
   #ec2_host_key_pair          = var.ec2_host_key_pair
   ec2ami                     = var.ec2ami
-  kms_key_id                  = var.kms_key_id
+  kmskeyid                  = var.kmskeyid
   autoscalinggroupsubnets  = var.autoscalinggroupsubnets
   instancetype               = var.instancetype
   iaminstanceprofile        = var.iaminstanceprofile
   ec2securitygroups         = var.ec2securitygroups
   tags                        = var.tags
-  ec2_lt_name_tag             = var.ec2_lt_name_tag
-  asg_resource_name           = var.asg_resource_name
-  lt_resource_name            = var.lt_resource_name
+  ec2ltnametag             = var.ec2ltnametag
+  asgresourcename           = var.asgresourcename
+  ltresourcename            = var.ltresourcename
   public_ssh_port             = var.public_ssh_port
   ebsvolumesize             = var.ebsvolumesize
   associatepublicipaddress = var.associatepublicipaddress

@@ -3,7 +3,7 @@
 .PHONY: apply destroy-backend destroy destroy-target plan-destroy plan plan-target prep
 VARS="variables/$(ENV)-$(REGION).tfvars"
 CURRENT_FOLDER=$(shell basename "$$(pwd)")
-APP_NAME="self-service"
+APP_NAME="$(APP)"
 S3_BUCKET="abc-343-$(ENV)-$(REGION)-167-terraform"
 DYNAMODB_TABLE="abc-343-$(ENV)-$(REGION)-167-terraform"
 WORKSPACE="ec2-$(ENV)-$(REGION)"

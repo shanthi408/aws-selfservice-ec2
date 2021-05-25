@@ -3,10 +3,10 @@
 #ec2securitygroups         = ["sg-dea4b0da"]
 #iam_instance_profile        = "SSMInstanceProfile"
 #ec2_ami                     = "ami-0d5eff06f840b45e9"
-kms_key_id                 = ""
-ec2_lt_name_tag             = "env-dev-lt"
-asg_resource_name           = "self-service-ec2-asg"
-lt_resource_name            = "self-service-ec2-lt"
+#kms_key_id                 = ""
+#ec2ltnametag             = "env-dev-lt"
+#asgresourcename           = "self-service-ec2-asg"
+#lt_resource_name            = "self-service-ec2-lt"
 #associate_public_ip_address = false
 #ebs_volume_size             = "35"
 

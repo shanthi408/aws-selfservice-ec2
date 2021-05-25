@@ -4,7 +4,7 @@ locals {
 
 
 resource "aws_launch_template" "ec2_launch_template" {
-  name = var.lt_resource_name
+  name = var.ltresourcename
   #image_id      = var.ec2_ami != "" ? var.ec2_ami : data.aws_ssm_parameter.ami.value
   image_id      = var.ec2ami
   instance_type = var.instancetype
@@ -19,7 +19,7 @@ resource "aws_launch_template" "ec2_launch_template" {
       volume_size           = var.ebsvolumesize
       delete_on_termination = true
       volume_type           = "gp2"
-      kms_key_id            = var.kms_key_id
+      kms_key_id            = var.kmskeyid
       encrypted             = true
     }
   }
@@ -44,7 +44,7 @@ resource "aws_launch_template" "ec2_launch_template" {
 
   tag_specifications {
     resource_type = "volume"
-    tags          = merge(map("Name", var.ec2_lt_name_tag), merge(var.tags))
+    tags          = merge(map("Name", var.ec2ltnametag), merge(var.tags))
   }
 
   lifecycle {
@@ -53,7 +53,7 @@ resource "aws_launch_template" "ec2_launch_template" {
 }
 
 resource "aws_autoscaling_group" "ec2_auto_scaling_group" {
-  name = var.asg_resource_name
+  name = var.asgresourcename
   launch_template {
     id      = aws_launch_template.ec2_launch_template.id
     version = "$Latest"
