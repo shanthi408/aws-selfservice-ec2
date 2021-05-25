@@ -78,7 +78,8 @@ plan-destroy: prep ## Creates a destruction plan.
 		-input=false \
 		-refresh=true \
 		-destroy \
-		-var-file="$(VARS)"
+		-var-file="$(VARS)" \
+		-var='ec2securitygroups=["sg-dea4b0da"]'
 		
 
 apply: prep ## terraform apply
