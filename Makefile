@@ -63,7 +63,7 @@ plan: prep ## Show what terraform thinks it will do
 		-refresh=true \
 		-var-file="$(VARS)" \
 		-var='ec2securitygroups=["sg-dea4b0da"]' \
-		-var='autoscalinggroupsubnets = ["subnet-78eb921e","subnet-7380c752"]'
+		-var='autoscalinggroupsubnets=["subnet-78eb921e","subnet-7380c752"]'
 
 plan-target: prep ## Shows what a plan looks like for applying a specific resource
 	@echo "$(YELLOW)$(BOLD)[INFO]   $(RESET)"; echo "Example to type for the following question: module.rds.aws_route53_record.rds-master"
@@ -75,7 +75,7 @@ plan-target: prep ## Shows what a plan looks like for applying a specific resour
 			-var-file="$(VARS)" \
 			-target=$$DATA \
 			-var='ec2securitygroups=["sg-dea4b0da"]' \
-			-var='autoscalinggroupsubnets = ["subnet-78eb921e","subnet-7380c752"]'
+			-var='autoscalinggroupsubnets=["subnet-78eb921e","subnet-7380c752"]'
 
 plan-destroy: prep ## Creates a destruction plan.
 	@terraform plan \
@@ -84,7 +84,7 @@ plan-destroy: prep ## Creates a destruction plan.
 		-destroy \
 		-var-file="$(VARS)" \
 		-var='ec2securitygroups=["sg-dea4b0da"]' \
-		-var='autoscalinggroupsubnets = ["subnet-78eb921e","subnet-7380c752"]'
+		-var='autoscalinggroupsubnets=["subnet-78eb921e","subnet-7380c752"]'
 		
 
 apply: prep ## terraform apply
@@ -95,7 +95,7 @@ apply: prep ## terraform apply
 		-auto-approve=true \
 		-var-file="$(VARS)" \
 		-var='ec2securitygroups=["sg-dea4b0da"]' \
-		-var='autoscalinggroupsubnets = ["subnet-78eb921e","subnet-7380c752"]'
+		-var='autoscalinggroupsubnets=["subnet-78eb921e","subnet-7380c752"]'
 
 destroy: prep ## Destroy the resources
 	@terraform destroy \
@@ -105,5 +105,5 @@ destroy: prep ## Destroy the resources
 		-auto-approve=true \
 		-var-file="$(VARS)" \
 		-var='ec2securitygroups=["sg-dea4b0da"]' \
-		-var='autoscalinggroupsubnets = ["subnet-78eb921e","subnet-7380c752"]'
+		-var='autoscalinggroupsubnets=["subnet-78eb921e","subnet-7380c752"]'
 
