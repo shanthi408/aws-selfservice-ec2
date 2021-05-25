@@ -10,7 +10,7 @@ lt_resource_name            = "self-service-ec2-lt"
 #associate_public_ip_address = false
 #ebs_volume_size             = "35"
 
-auto_scaling_group_subnets = [
+autoscalinggroupsubnets = [
   "subnet-78eb921e",
   "subnet-7380c752"
 ]
