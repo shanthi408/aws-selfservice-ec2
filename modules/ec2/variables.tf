@@ -17,7 +17,7 @@ variable "ec2_lt_name_tag" {
   default     = "gobi.kafka-copy.sandbox-lt"
 }
 
-variable "ec2_ami" {
+variable "ec2ami" {
   type        = string
   description = "The AMI that the ec2 Host will use."
   default     = ""
