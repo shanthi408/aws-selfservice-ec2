@@ -61,7 +61,8 @@ plan: prep ## Show what terraform thinks it will do
 		-lock=true \
 		-input=false \
 		-refresh=true \
-		-var-file="$(VARS)"
+		-var-file="$(VARS)" \
+		-var='ec2securitygroups=["sg-dea4b0da"]'
 
 plan-target: prep ## Shows what a plan looks like for applying a specific resource
 	@echo "$(YELLOW)$(BOLD)[INFO]   $(RESET)"; echo "Example to type for the following question: module.rds.aws_route53_record.rds-master"
@@ -71,7 +72,8 @@ plan-target: prep ## Shows what a plan looks like for applying a specific resour
 			-input=true \
 			-refresh=true \
 			-var-file="$(VARS)" \
-			-target=$$DATA
+			-target=$$DATA \
+			-var='ec2securitygroups=["sg-dea4b0da"]'
 
 plan-destroy: prep ## Creates a destruction plan.
 	@terraform plan \
