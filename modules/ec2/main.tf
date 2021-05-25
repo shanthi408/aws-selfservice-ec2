@@ -62,7 +62,7 @@ resource "aws_autoscaling_group" "ec2_auto_scaling_group" {
   min_size         = var.ec2_instance_count
   desired_capacity = var.ec2_instance_count
 
-  vpc_zone_identifier = var.auto_scaling_group_subnets
+  vpc_zone_identifier = var.autoscalinggroupsubnets
 
   default_cooldown          = 180
   health_check_grace_period = 180

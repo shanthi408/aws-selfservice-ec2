@@ -45,7 +45,7 @@ variable "lt_resource_name" {
 }
 
 
-variable "auto_scaling_group_subnets" {
+variable "autoscalinggroupsubnets" {
   type        = string
   description = "List of subnet were the Auto Scalling Group will deploy the instances"
 }
