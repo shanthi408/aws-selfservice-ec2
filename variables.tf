@@ -93,5 +93,5 @@ variable "iaminstanceprofile" {
 
 variable "ec2securitygroups" {
   description = "List of Security groups attached to EC2."
-  type        = string
+  type        = list(string)
 }
