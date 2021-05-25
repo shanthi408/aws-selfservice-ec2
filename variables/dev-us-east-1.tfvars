@@ -10,10 +10,10 @@ lt_resource_name            = "self-service-ec2-lt"
 #associate_public_ip_address = false
 #ebs_volume_size             = "35"
 
-autoscalinggroupsubnets = [
-  "subnet-78eb921e",
-  "subnet-7380c752"
-]
+#autoscalinggroupsubnets = [
+ # "subnet-78eb921e",
+ # "subnet-7380c752"
+#]
 
 tags = {
   Name               = "dev_ec2"
