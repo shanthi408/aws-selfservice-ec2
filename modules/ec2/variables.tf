@@ -41,11 +41,11 @@ variable "lt_resource_name" {
 
 
 variable "autoscalinggroupsubnets" {
-  type        = string
-  description = "List of subnet were the Auto Scalling Group will deploy the instances"
+  type        = list(string)
+  description = "subnet were the Auto Scalling Group will deploy the instances"
 }
 
-variable "associate_public_ip_address" {
+variable "associatepublicipaddress" {
   type = bool
 }
 
@@ -76,7 +76,7 @@ variable "allow_ssh_commands" {
 }
 
 
-variable "ebs_volume_size" {
+variable "ebsvolumesize" {
   type = string
 }
 

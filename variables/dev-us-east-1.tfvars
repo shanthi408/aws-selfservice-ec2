@@ -7,8 +7,8 @@ kms_key_id                 = ""
 ec2_lt_name_tag             = "env-dev-lt"
 asg_resource_name           = "self-service-ec2-asg"
 lt_resource_name            = "self-service-ec2-lt"
-associate_public_ip_address = false
-ebs_volume_size             = "35"
+#associate_public_ip_address = false
+#ebs_volume_size             = "35"
 
 #auto_scaling_group_subnets = [
  # "subnet-78eb921e",

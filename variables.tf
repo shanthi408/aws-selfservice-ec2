@@ -25,7 +25,7 @@ variable "ec2ami" {
   default     = ""
 }
 
-variable "ebs_volume_size" {
+variable "ebsvolumesize" {
   type = string
 }
 
@@ -46,11 +46,11 @@ variable "lt_resource_name" {
 
 
 variable "autoscalinggroupsubnets" {
-  type        = string
-  description = "List of subnet were the Auto Scalling Group will deploy the instances"
+  type        = list(string)
+  description = "subnet were the Auto Scalling Group will deploy the instances"
 }
 
-variable "associate_public_ip_address" {
+variable "associatepublicipaddress" {
   type = bool
 }
 

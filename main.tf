@@ -31,7 +31,7 @@ module "ec2" {
   asg_resource_name           = var.asg_resource_name
   lt_resource_name            = var.lt_resource_name
   public_ssh_port             = var.public_ssh_port
-  ebs_volume_size             = var.ebs_volume_size
-  associate_public_ip_address = var.associate_public_ip_address
+  ebsvolumesize             = var.ebsvolumesize
+  associatepublicipaddress = var.associatepublicipaddress
 }
 

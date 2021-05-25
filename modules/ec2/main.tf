@@ -16,7 +16,7 @@ resource "aws_launch_template" "ec2_launch_template" {
     device_name = "/dev/sda1"
 
     ebs {
-      volume_size           = var.ebs_volume_size
+      volume_size           = var.ebsvolumesize
       delete_on_termination = true
       volume_type           = "gp2"
       kms_key_id            = var.kms_key_id
@@ -25,7 +25,7 @@ resource "aws_launch_template" "ec2_launch_template" {
   }
 
   network_interfaces {
-    associate_public_ip_address = var.associate_public_ip_address
+    associate_public_ip_address = var.associatepublicipaddress
     security_groups             = var.ec2securitygroups
     delete_on_termination       = true
   }
