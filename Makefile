@@ -86,14 +86,12 @@ apply: prep ## terraform apply
 		-lock=true \
 		-input=false \
 		-refresh=true \
-		-var-file="$(VARS) \
-		-auto-approve"
+		-var-file="$(VARS)"
 
 destroy: prep ## Destroy the resources
 	@terraform destroy \
 		-lock=true \
 		-input=false \
 		-refresh=true \
-		-var-file="$(VARS) \
-		-auto-approve"
+		-var-file="$(VARS)"
 
