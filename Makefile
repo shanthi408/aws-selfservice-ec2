@@ -40,7 +40,6 @@ set-env:
 
 prep: set-env ## Prepare a new workspace (environment) if needed, configure the tfstate backend, update any modules, and switch to the workspace
 	@pwd
-	@rm -r .terraform
 	@echo "$(BOLD)Configuring the terraform backend$(RESET)"
 	@echo "$(APP_NAME)"
 	@terraform init \
