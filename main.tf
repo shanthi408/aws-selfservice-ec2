@@ -8,12 +8,18 @@ terraform {
     key     = "${var.appname}.tfstate"
     dynamodb_table = "abc-343-${var.environment}-${var.region}-167-terraform"
 
+    workspaces {
+      name = "ec2-${var.environment}-${var.region}"
+    }
+
   }
 }
 
 provider "aws" {
   region = var.region
 }
+
+
 
 
 module "ec2" {
