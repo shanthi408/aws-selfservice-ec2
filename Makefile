@@ -39,6 +39,8 @@ set-env:
 	 fi
 
 prep: set-env ## Prepare a new workspace (environment) if needed, configure the tfstate backend, update any modules, and switch to the workspace
+	@pwd
+	@rm -r .terraform
 	@echo "$(BOLD)Configuring the terraform backend$(RESET)"
 	@terraform init \
 		-input=false \
