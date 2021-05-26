@@ -37,7 +37,13 @@ set-env:
 prep: set-env ## Prepare a new workspace (environment) if needed, configure the tfstate backend, update any modules, and switch to the workspace
 	@pwd
 	@echo "$(BOLD)Configuring the terraform backend$(RESET)"
-	@echo "$(APP_NAME)"
+	@echo "Appname :$(APP_NAME)"
+	@echo "Workspace :$(WORKSPACE)"
+	@echo "AWS_PROFILE :$(AWS_PROFILE)"
+	@echo "S3 BUCKET :$(S3_BUCKET)"
+	@echo "DYNAMODB TABLE :$(DYNAMODB_TABLE)"
+	@echo "ENV :$(ENV)"
+	@echo "REGION TABLE :$(REGION)"
 	@terraform init \
 		-input=false \
 		-force-copy \
