@@ -33,10 +33,6 @@ set-env:
 		echo "$(BOLD)Example usage: \`AWS_PROFILE=whatever ENV=demo REGION=us-east-2 make plan\`$(RESET)"; \
 		exit 1; \
 	 fi
-	##@if [ ! -f "$(VARS)" ]; then \
-	##	echo "$(BOLD)$(RED)Could not find variables file: $(VARS)$(RESET)"; \
-	##	exit 1; \
-	##fi
 
 prep: set-env ## Prepare a new workspace (environment) if needed, configure the tfstate backend, update any modules, and switch to the workspace
 	@pwd
