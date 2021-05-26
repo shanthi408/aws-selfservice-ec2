@@ -4,9 +4,9 @@ terraform {
   backend "s3" {
     encrypt = true
     acl     = "private"
-    bucket  = "abc-343-dev-us-east-1-167-terraform"
-    key     = "dev.tfstate"
-    dynamodb_table = "abc-343-dev-us-east-1-167-terraform"
+    bucket  = "abc-343-"${var.environment}"-"${var.region}"-167-terraform"
+    key     = "${var.appname}.tfstate"
+    dynamodb_table = "abc-343-"${var.environment}"-"${var.region}"-167-terraform"
 
   }
 }

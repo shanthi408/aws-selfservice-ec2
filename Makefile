@@ -42,7 +42,7 @@ prep: set-env ## Prepare a new workspace (environment) if needed, configure the 
 	@pwd
 	@rm -r .terraform
 	@echo "$(BOLD)Configuring the terraform backend$(RESET)"
-	@echo $APP_NAME
+	@echo "$(APP_NAME)"
 	@terraform init \
 		-input=false \
 		-force-copy \
