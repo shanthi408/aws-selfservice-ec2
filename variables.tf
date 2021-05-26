@@ -31,6 +31,7 @@ variable "ebsvolumesize" {
 
 variable "kmskeyid" {
   type        = string
+  default     = null
   description = "KMS key to encrypt ebs volume"
 }
 
@@ -98,6 +99,6 @@ variable "ec2securitygroups" {
 
 variable "appname" {
   description = "List of Security groups attached to EC2."
-  type        = list(string)
+  type        = string
 }
 
