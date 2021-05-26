@@ -1,7 +1,7 @@
 locals {
   tags_asg_format = null_resource.tags_as_list_of_maps.*.triggers
 
-  name_prefix = var.ec2_lt_name_tag
+  name_prefix = var.ec2ltnametag
 }
 
 resource "null_resource" "tags_as_list_of_maps" {

@@ -39,7 +39,7 @@ resource "aws_launch_template" "ec2_launch_template" {
 
   tag_specifications {
     resource_type = "instance"
-    tags          = merge(map("Name", var.ec2_lt_name_tag), merge(var.tags))
+    tags          = merge(map("Name", var.ec2ltnametag), merge(var.tags))
   }
 
   tag_specifications {
