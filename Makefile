@@ -47,7 +47,6 @@ prep: set-env ## Prepare a new workspace (environment) if needed, configure the 
 		-input=false \
 		-force-copy \
 		-lock=true \
-		-upgrade \
 		-verify-plugins=true \
 		-backend=true \
 		-backend-config="profile=$(AWS_PROFILE)" \
