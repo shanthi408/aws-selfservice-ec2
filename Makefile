@@ -43,6 +43,7 @@ prep: set-env ## Prepare a new workspace (environment) if needed, configure the 
 	@terraform init \
 		-input=false \
 		-force-copy \
+		-upgrade \
 		-reconfigure \
 		-lock=true \
 		-upgrade \
