@@ -44,7 +44,7 @@ prep: set-env ## Prepare a new workspace (environment) if needed, configure the 
 		-lock=true \
 		-verify-plugins=true \
 		-backend=true \
-		-migrate-state \
+		-migrate-state=true \
 		-backend-config="profile=$(AWS_PROFILE)" \
 		-backend-config="region=$(REGION)" \
 		-backend-config="bucket=$(S3_BUCKET)" \
