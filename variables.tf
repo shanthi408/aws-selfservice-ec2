@@ -95,3 +95,9 @@ variable "ec2securitygroups" {
   description = "List of Security groups attached to EC2."
   type        = list(string)
 }
+
+variable "appname" {
+  description = "List of Security groups attached to EC2."
+  type        = list(string)
+}
+

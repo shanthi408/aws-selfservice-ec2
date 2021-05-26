@@ -5,7 +5,7 @@ terraform {
     encrypt = true
     acl     = "private"
     #bucket  = "abc-343-dev-us-east-1-167-terraform"
-    key     = var.appname.tfstate
+    key     = "dev.tfstate"
     #dynamodb_table = "abc-343-dev-us-east-1-167-terraform"
 
   }
