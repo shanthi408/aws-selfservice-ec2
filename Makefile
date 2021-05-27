@@ -76,7 +76,7 @@ plan: prep ## Show what terraform thinks it will do
 		-lock=true \
 		-input=false \
 		-refresh=true \
-		-var='ec2securitygroups=$(SECURITY_GRP)'
+		-var='ec2securitygroups=["sg-dea4b0da"]'
 		-var='autoscalinggroupsubnets=["subnet-78eb921e","subnet-7380c752"]' \
 		-var='tags={"Name":"dev_ec2","Created_By":"Shanthi","Created_Date":"5/26/2021","Organization":"CSO","Owner":"JohnDoe","Project":"SelfServiceEC2","Environment":"Dev","Jira_ticket_Number":"CICD-2021","Expires":"12/12/2021","OS":"Ubuntu"}'
 
@@ -88,7 +88,7 @@ plan-target: prep ## Shows what a plan looks like for applying a specific resour
 			-input=true \
 			-refresh=true \
 			-target=$$DATA \
-			-var='ec2securitygroups=[$(shell echo $(SG) | sed -r 's/[^,]+/"&"/g')]'  \
+			-var='ec2securitygroups=["sg-dea4b0da"]'  \
 			-var='autoscalinggroupsubnets=["subnet-78eb921e","subnet-7380c752"]' \
 			-var='tags={"Name":"dev_ec2","Created_By":"Shanthi","Created_Date":"5/26/2021","Organization":"CSO","Owner":"JohnDoe","Project":"SelfServiceEC2","Environment":"Dev","Jira_ticket_Number":"CICD-2021","Expires":"12/12/2021","OS":"Ubuntu"}'
 
@@ -97,7 +97,7 @@ plan-destroy: prep ## Creates a destruction plan.
 		-input=false \
 		-refresh=true \
 		-destroy \
-		-var='ec2securitygroups=$(SECURITY_GRP)' \
+		-var='ec2securitygroups=["sg-dea4b0da"]' \
 		-var='autoscalinggroupsubnets=["subnet-78eb921e","subnet-7380c752"]' \
 		-var='tags={"Name":"dev_ec2","Created_By":"Shanthi","Created_Date":"5/26/2021","Organization":"CSO","Owner":"JohnDoe","Project":"SelfServiceEC2","Environment":"Dev","Jira_ticket_Number":"CICD-2021","Expires":"12/12/2021","OS":"Ubuntu"}'
 
@@ -108,7 +108,7 @@ apply: prep ## terraform apply
 		-input=false \
 		-refresh=true \
 		-auto-approve=true \
-		-var='ec2securitygroups=$(SECURITY_GRP)' \
+		-var='ec2securitygroups=["sg-dea4b0da"]' \
 		-var='autoscalinggroupsubnets=["subnet-78eb921e","subnet-7380c752"]' \
 		-var='tags={"Name":"dev_ec2","Created_By":"Shanthi","Created_Date":"5/26/2021","Organization":"CSO","Owner":"JohnDoe","Project":"SelfServiceEC2","Environment":"Dev","Jira_ticket_Number":"CICD-2021","Expires":"12/12/2021","OS":"Ubuntu"}'
 
@@ -118,6 +118,6 @@ destroy: prep ## Destroy the resources
 		-input=false \
 		-refresh=true \
 		-auto-approve=true \
-		-var='ec2securitygroups=$(SECURITY_GRP)' \
+		-var='ec2securitygroups=["sg-dea4b0da"]' \
 		-var='autoscalinggroupsubnets=["subnet-78eb921e","subnet-7380c752"]' \
         -var='tags={"Name":"dev_ec2","Created_By":"Shanthi","Created_Date":"5/26/2021","Organization":"CSO","Owner":"JohnDoe","Project":"SelfServiceEC2","Environment":"Dev","Jira_ticket_Number":"CICD-2021","Expires":"12/12/2021","OS":"Ubuntu"}'
