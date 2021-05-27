@@ -19,7 +19,7 @@ help:
 
 set-env:
     @SG_GROUP=`echo $(SECURITY_GRP) | sed -r 's/[^,]+/"&"/g'`
-	@echo $(SG_GROUP) 
+	@echo "$(SG_GROUP)" 
 	@if [ -z $(ENV) ]; then \
 		echo "$(BOLD)$(RED)ENV was not set$(RESET)"; \
 		ERROR=1; \
