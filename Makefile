@@ -88,7 +88,7 @@ plan-target: prep ## Shows what a plan looks like for applying a specific resour
 			-input=true \
 			-refresh=true \
 			-target=$$DATA \
-			-var='ec2securitygroups=$(SECURITY_GRP)'  \
+			-var='ec2securitygroups=[$(shell echo $(SG) | sed -r 's/[^,]+/"&"/g')]'  \
 			-var='autoscalinggroupsubnets=["subnet-78eb921e","subnet-7380c752"]' \
 			-var='tags={"Name":"dev_ec2","Created_By":"Shanthi","Created_Date":"5/26/2021","Organization":"CSO","Owner":"JohnDoe","Project":"SelfServiceEC2","Environment":"Dev","Jira_ticket_Number":"CICD-2021","Expires":"12/12/2021","OS":"Ubuntu"}'
 
