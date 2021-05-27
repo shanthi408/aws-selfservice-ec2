@@ -45,6 +45,8 @@ prep: set-env ## Prepare a new workspace (environment) if needed, configure the 
 	@echo "DYNAMODB TABLE :$(DYNAMODB_TABLE)"
 	@echo "ENV :$(ENV)"
 	@echo "REGION TABLE :$(REGION)"
+	@echo "REGION TABLE :$(SG)"
+	@echo "REGION TABLE :$(SECURITY_GRP)"
 	@terraform init \
 		-input=false \
 		-force-copy \
