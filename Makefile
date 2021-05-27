@@ -40,7 +40,7 @@ set-env:
       
 prep: set-env ## Prepare a new workspace (environment) if needed, configure the tfstate backend, update any modules, and switch to the workspace
 	@pwd
-	G_GROUP2=[$(shell echo $(SG) | sed -r 's/[^,]+/"&"/g')]
+	SG_GROUP2=[$(shell echo $(SG) | sed -r 's/[^,]+/"&"/g')]
 	@echo "SG_GROUP is :$(SG_GROUP)" 
 	@echo "SG_GROUP1 is :$(SG_GROUP1)" 
 	@echo "SG_GROUP2 is :$(SG_GROUP2)" 
