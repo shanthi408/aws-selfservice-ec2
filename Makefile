@@ -18,8 +18,7 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 set-env:
-    @SG_GROUP=`echo $(SECURITY_GRP) | sed -r 's/[^,]+/"&"/g'`
-	@echo "$(SG_GROUP)" 
+
 	@if [ -z $(ENV) ]; then \
 		echo "$(BOLD)$(RED)ENV was not set$(RESET)"; \
 		ERROR=1; \
@@ -36,9 +35,11 @@ set-env:
 		echo "$(BOLD)Example usage: \`AWS_PROFILE=whatever ENV=demo REGION=us-east-2 make plan\`$(RESET)"; \
 		exit 1; \
 	 fi
-
+      
 prep: set-env ## Prepare a new workspace (environment) if needed, configure the tfstate backend, update any modules, and switch to the workspace
 	@pwd
+	@SG_GROUP=`echo $(SECURITY_GRP) | sed -r 's/[^,]+/"&"/g'`
+	@echo "SG is : $(SG_GROUP)" 
 	@echo "$(BOLD)Configuring the terraform backend$(RESET)"
 	@echo "Appname :$(APP_NAME)"
 	@echo "Workspace :$(WORKSPACE)"
