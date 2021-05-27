@@ -41,7 +41,7 @@ set-env:
 prep: set-env ## Prepare a new workspace (environment) if needed, configure the tfstate backend, update any modules, and switch to the workspace
 	@pwd
 	@echo "SG_GROUP1 is :$(SG_GROUP1)" 
-	echo "SG_GROUP is :$(SG_GROUP)" 
+	@echo "SG_GROUP is :$(SG_GROUP)" 
 	@echo "$(BOLD)Configuring the terraform backend$(RESET)"
 	@echo "Appname :$(APP_NAME)"
 	@echo "Workspace :$(WORKSPACE)"
