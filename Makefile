@@ -13,7 +13,7 @@ RED=$(shell tput setaf 1)
 GREEN=$(shell tput setaf 2)
 YELLOW=$(shell tput setaf 3)
 RESET=$(shell tput sgr0)
-SG_GROUP=
+SG_GROUP=[$(shell echo $(SG) | sed -r 's/[^,]+/"&"/g')]
 
 
 help:
@@ -40,8 +40,7 @@ set-env:
       
 prep: set-env ## Prepare a new workspace (environment) if needed, configure the tfstate backend, update any modules, and switch to the workspace
 	@pwd
-	SG_GROUP:=[$(shell echo $(SG) | sed -r 's/[^,]+/"&"/g')]
-	@echo "SG is : $(SG_GROUP)" 
+	@echo "SG is :$(SG_GROUP)" 
 	@echo "$(BOLD)Configuring the terraform backend$(RESET)"
 	@echo "Appname :$(APP_NAME)"
 	@echo "Workspace :$(WORKSPACE)"
