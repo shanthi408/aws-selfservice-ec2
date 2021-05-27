@@ -13,14 +13,14 @@ RED=$(shell tput setaf 1)
 GREEN=$(shell tput setaf 2)
 YELLOW=$(shell tput setaf 3)
 RESET=$(shell tput sgr0)
-SG_GROUP=[$(shell echo $(SG) | sed -r 's/[^,]+/"&"/g')]
+SG_GROUP1=[$(shell echo $(SG) | sed -r 's/[^,]+/"&"/g')]
 
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 set-env:
-    
+    SG_GROUP=[$(shell echo $(SG) | sed -r 's/[^,]+/"&"/g')]
 	@if [ -z $(ENV) ]; then \
 		echo "$(BOLD)$(RED)ENV was not set$(RESET)"; \
 		ERROR=1; \
@@ -40,7 +40,8 @@ set-env:
       
 prep: set-env ## Prepare a new workspace (environment) if needed, configure the tfstate backend, update any modules, and switch to the workspace
 	@pwd
-	@echo "SG is :$(SG_GROUP)" 
+	@echo "SG_GROUP1 is :$(SG_GROUP1)" 
+	echo "SG_GROUP is :$(SG_GROUP)" 
 	@echo "$(BOLD)Configuring the terraform backend$(RESET)"
 	@echo "Appname :$(APP_NAME)"
 	@echo "Workspace :$(WORKSPACE)"
@@ -49,8 +50,8 @@ prep: set-env ## Prepare a new workspace (environment) if needed, configure the 
 	@echo "DYNAMODB TABLE :$(DYNAMODB_TABLE)"
 	@echo "ENV :$(ENV)"
 	@echo "REGION TABLE :$(REGION)"
-	@echo "REGION TABLE :$(SG)"
-	@echo "REGION TABLE :$(SECURITY_GRP)"
+	@echo "SG :$(SG)"
+	@echo "SECURITY_GRP :$(SECURITY_GRP)"
 	@terraform init \
 		-input=false \
 		-force-copy \
